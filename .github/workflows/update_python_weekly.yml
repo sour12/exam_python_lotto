@@ -9,7 +9,7 @@ on:
   pull_request:
     branches: [ "main" ]
   schedule:
-    - cron: '55 23 * * 5' # UST 기준의 크론. UST 23:55 는 KST 08:55  
+    - cron: "0 1 * * 0"   # UTC 시간 기준으로 일요일 새벽 1시 (Cron 표현식)  
 
 jobs:
   build:

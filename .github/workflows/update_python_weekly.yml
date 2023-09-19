@@ -33,10 +33,4 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: run lotto.py
       run: |
-        python ./lotto.py >> output.log
-        cp output.log $GITHUB_WORKSPACE/logs/output.log
-    - name: Upload Log as Artifact
-      uses: actions/upload-artifact@v2
-      with:
-        name: logs
-        path: $GITHUB_WORKSPACE/logs/output.log
+        python ./lotto.py

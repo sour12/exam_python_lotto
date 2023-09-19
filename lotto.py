@@ -1,5 +1,4 @@
 import requests
-from tqdm import tqdm
 
 def lotton_prediction():
     # 총 횟수 확인 (23/9/19 기준 1085회까지 진행됨)
@@ -17,7 +16,7 @@ def lotton_prediction():
     print("로또 번호 크롤링 ...")
     count_num = {key: 0 for key in range(1, 47)}
     count_bonus = {key: 0 for key in range(1, 47)}
-    for i in tqdm(range(1, num)):
+    for i in range(1, num):
         url="https://www.dhlottery.co.kr/common.do?method=getLottoNumber&drwNo="+str(i)
         req=requests.get(url)
         result=req.json()

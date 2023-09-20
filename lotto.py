@@ -14,8 +14,8 @@ def lotton_prediction():
     
     # 1회차부터 현재차수까지 당첨번호 크롤링
     print("로또 번호 크롤링 ...")
-    count_num = {key: 0 for key in range(1, 47)}
-    count_bonus = {key: 0 for key in range(1, 47)}
+    count_num = {key: 0 for key in range(1, 46)}
+    count_bonus = {key: 0 for key in range(1, 46)}
     for i in range(1, num):
         url="https://www.dhlottery.co.kr/common.do?method=getLottoNumber&drwNo="+str(i)
         req=requests.get(url)
@@ -34,7 +34,7 @@ def lotton_prediction():
     print("가장 많이 뽑힌 번호:", sorted(top_6_keys))
     print("가장 적게 뽑힌 번호:", sorted(bottom_6_keys))
     
-    combined_count = {key: count_num[key] + count_bonus[key] for key in range(1, 47)}
+    combined_count = {key: count_num[key] + count_bonus[key] for key in range(1, 46)}
     print("[보너스포함] 가장 많이 뽑힌 번호:", sorted(sorted(combined_count, key=lambda k: combined_count[k], reverse=True)[:6]))
     print("[보너스포함] 가장 적게 뽑힌 번호:", sorted(sorted(combined_count, key=lambda k: combined_count[k])[:6]))
     

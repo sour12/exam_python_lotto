@@ -38,7 +38,8 @@ jobs:
       uses: actions/download-artifact@v2
       with:
         name: lotto
-        path: lotto/weekly
+        path: lotto/weekly  
+      continue-on-error: true
     
     - name: run lotto.py
       run: |

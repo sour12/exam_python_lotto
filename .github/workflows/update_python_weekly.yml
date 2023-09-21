@@ -8,8 +8,8 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
-  schedule:
-    - cron: "0 1 * * 1"   # UTC 1:00(월) > KST 10:00(월)  
+  # schedule:
+  #   - cron: "0 1 * * 1"   # UTC 1:00(월) > KST 10:00(월)  
 
 jobs:
   build:
@@ -34,19 +34,23 @@ jobs:
         python -m pip install tqdm requests
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
-    # - name: Download Artifact
-    #   uses: actions/download-artifact@v3
-    #   with:
-    #     name: lotto_temp
-    #     path: ./
+    - run: mkdir -p ./lotto
+    
+    - name: Restore cache (if available)
+      uses: actions/cache@v2
+      with:
+        path: ./lotto
+        key: ltest
         
     - name: run lotto.py
       run: |
         python ./lotto.py
+        ls -al ./lotto/
         
-    # - name: Upload Artifact
-    #   uses: actions/upload-artifact@v3
-    #   with:
-    #     name: lotto_temp
-    #     path: lotto_count.log
+    - name: Cache the result
+      uses: actions/cache@v2
+      with:
+        path: ./lotto
+        key: ltest
+        restore-keys: ltest
 

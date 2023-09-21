@@ -36,22 +36,22 @@ jobs:
 
     - run: mkdir -p ./lotto
     
-    # - name: Cache the result
-    #   uses: actions/cache@v2
-    #   with:
-    #     path: ./lotto
-    #     key: ltest
-
-
-    - name: Save Primes
-      uses: actions/cache/save@v3
+    - name: Cache the result
+      uses: actions/cache@v3
       with:
         path: ./lotto
         key: ltest
+
+
+    # - name: Save Primes
+    #   uses: actions/cache/save@v3
+    #   with:
+    #     path: ./lotto
+    #     key: ltest
         
     - name: run lotto.py
       run: |
-        cat ./lotto/count.log
+        # cat ./lotto/count.log
         # python ./lotto.py
         echo "1085" >> ./lotto/count.log
         echo "151;142;147;146;140;141;145;140;116;145;147;157;153;155;145;142;154;162;144;151;145;129;133;146;136;145;157;131;135;132;145;129;152;164;142;146;149;146;150;150;134;140;150;144;157;" >> ./lotto/count.log

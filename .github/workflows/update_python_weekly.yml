@@ -36,6 +36,6 @@ jobs:
     
     - name: run lotto.py
       run: |
-        cat $LCOUNT
+        echo "Value of LCOUNT is $LCOUNT"
         echo "1324!1;2;3;4;5!12;3;4;5" > $LCOUNT
         # python ./lotto.py

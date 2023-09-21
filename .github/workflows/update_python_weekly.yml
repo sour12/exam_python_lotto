@@ -37,8 +37,8 @@ jobs:
     - name: Download Lotto Artifact
       uses: actions/download-artifact@v2
       with:
-        name: lotto
-        path: lotto/weekly  
+        name: lotto_tmp
+        path: ./  
       continue-on-error: true
     
     - name: run lotto.py
@@ -49,5 +49,5 @@ jobs:
     - name: Upload Log Artifact
       uses: actions/upload-artifact@v2
       with:
-        name: lotto
-        path: lotto/weekly/count.log
+        name: lotto_tmp
+        path: ./lotto_count.log

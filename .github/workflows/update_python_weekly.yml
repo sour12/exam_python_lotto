@@ -36,11 +36,12 @@ jobs:
 
     - run: mkdir -p ./lotto
     
-    - name: Restore cache (if available)
+    - name: Cache the result
       uses: actions/cache@v2
       with:
         path: ./lotto
         key: ltest
+        restore-keys: ltest
         
     - name: run lotto.py
       run: |
@@ -52,10 +53,8 @@ jobs:
         ls -al ./lotto/
         cat ./lotto/count.log
         
-    - name: Cache the result
+    - name: Restore cache (if available)
       uses: actions/cache@v2
       with:
         path: ./lotto
         key: ltest
-        restore-keys: ltest
-

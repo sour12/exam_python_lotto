@@ -35,7 +35,7 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     
     - name: Download Lotto Artifact
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v3
       with:
         name: lotto_tmp
         path: ./  
@@ -46,7 +46,7 @@ jobs:
         python ./lotto.py
 
     - name: Upload Log Artifact
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: lotto_tmp
         path: ./lotto_count.log

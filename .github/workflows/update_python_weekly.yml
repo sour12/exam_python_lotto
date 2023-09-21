@@ -43,7 +43,6 @@ jobs:
     
     - name: run lotto.py
       run: |
-        mkdir -p ./lotto/weekly
         python ./lotto.py
 
     - name: Upload Log Artifact

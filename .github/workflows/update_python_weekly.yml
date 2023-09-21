@@ -48,7 +48,7 @@ jobs:
       uses: actions/cache/restore@v3
       with:
         path: ./lotto
-        key: ${{ runner.os }}-primes
+        key: ltest
         
     - name: run lotto.py
       run: |
@@ -74,4 +74,3 @@ jobs:
       with:
         path: ./lotto
         key: ${{ steps.cache-primes-restore.outputs.cache-primary-key }}
-

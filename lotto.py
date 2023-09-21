@@ -89,5 +89,5 @@ def save_lotto_count(lcnt):
 
 
 ocnt = load_lotto_count()
-ncnt = prediction_lotto(ocnt)
+ncnt = prediction_lotto(1080)
 save_lotto_count(ncnt)

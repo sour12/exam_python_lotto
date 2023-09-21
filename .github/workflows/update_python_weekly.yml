@@ -44,10 +44,11 @@ jobs:
 
 
     - name: Restore cached Primes
+      id: cache-primes-restore
       uses: actions/cache/restore@v3
       with:
         path: ./lotto
-        key: ltest  
+        key: ${{ runner.os }}-primes
         
     - name: run lotto.py
       run: |
@@ -67,13 +68,10 @@ jobs:
     #     path: ./lotto
     #     key: ltest
 
-    # - name: Save Primes
-    #   uses: actions/cache/save@v3
-    #   with:
-    #     path: ./lotto
-    #     key: ltest
-    - name: Restore cached Primes
-      uses: actions/cache/restore@v3
+    - name: Save Primes
+      id: cache-primes-save
+      uses: actions/cache/save@v3
       with:
         path: ./lotto
-        key: ltest  
+        key: ${{ steps.cache-primes-restore.outputs.cache-primary-key }}
+

@@ -44,7 +44,7 @@ jobs:
         
     - name: run lotto.py
       run: |
-        python ./lotto.py
+        # python ./lotto.py
         ls -al ./lotto/
         
     - name: Cache the result

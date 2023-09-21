@@ -51,7 +51,7 @@ jobs:
         
     - name: run lotto.py
       run: |
-        echo "before data !!!!!!!!!!!!!!!"
+        echo "before data !!!!!!!!!!!!!!"
         cat ./lotto/count.log
         # python ./lotto.py
         echo "after data !!!!!!!!!!!!!!!"

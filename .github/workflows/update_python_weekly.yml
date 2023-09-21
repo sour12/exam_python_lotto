@@ -46,14 +46,9 @@ jobs:
         ls -al ./
         cat ./lotto_count.log
         
-    - name: Upload Artifact
-      uses: actions/upload-artifact@v3
-      with:
-        name: lotto_temp
-        path: lotto_count.log
+    # - name: Upload Artifact
+    #   uses: actions/upload-artifact@v3
+    #   with:
+    #     name: lotto_temp
+    #     path: lotto_count.log
 
-    - name: Download Artifact
-      uses: actions/download-artifact@v3
-      with:
-        name: lotto_temp
-        path: ./

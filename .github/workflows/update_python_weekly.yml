@@ -38,13 +38,6 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
     - run: mkdir -p ./lotto
-    
-    # - name: Cache the result
-    #   uses: actions/cache@v3
-    #   with:
-    #     path: ./lotto
-    #     key: ltest
-
 
     - name: Restore Cache
       id: cache-restore
@@ -73,12 +66,6 @@ jobs:
         gh actions-cache delete "ltest" --confirm
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        
-    # - name: Restore cache (if available)
-    #   uses: actions/cache@v2
-    #   with:
-    #     path: ./lotto
-    #     key: ltest
 
     - name: Save Cache
       id: cache-primes-save

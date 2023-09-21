@@ -8,8 +8,8 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
-  # schedule:
-  #   - cron: "0 1 * * 1"   # UTC 1:00(월) > KST 10:00(월)  
+  schedule:
+    - cron: "0 1 * * 1"   # UTC 1:00(월) > KST 10:00(월)  
 
 permissions:
   actions: write # require to delete cache
@@ -48,15 +48,8 @@ jobs:
         
     - name: run lotto.py
       run: |
-        echo "before data !!!!!!!!!!!!!!"
-        cat ./lotto/count.log
-        # python ./lotto.py
-        echo "after data !!!!!!!!!!!!!!!"
-        echo "1085" > ./lotto/count.log
-        echo "151;142;147;146;140;141;145;140;116;145;147;157;153;155;145;142;154;162;144;151;145;129;133;146;136;145;157;131;135;132;145;129;152;164;142;146;149;146;150;150;134;140;150;144;157;" >> ./lotto/count.log
-        echo "30;29;26;30;22;31;26;20;24;27;23;25;26;21;23;26;30;18;20;25;22;14;18;28;18;29;28;21;14;30;26;29;29;21;28;23;21;28;24;20;15;23;35;22;17;" >> ./lotto/count.log
-        ls -al ./lotto/
-        cat ./lotto/count.log
+        python ./lotto.py
+        # cat ./lotto/count.log
         
     - name: Delete Previous Cache
       if: ${{ steps.cache-restore.outputs.cache-hit }}

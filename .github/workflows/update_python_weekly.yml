@@ -38,3 +38,9 @@ jobs:
       run: |
         python ./lotto.py
         ls -al ./
+        
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: lotto_temp
+        path: ./lotto_count.log

@@ -36,17 +36,16 @@ jobs:
 
     - run: mkdir -p ./lotto
     
-    - name: Cache the result
-      uses: actions/cache@v2
+    # - name: Cache the result
+    #   uses: actions/cache@v2
+    #   with:
+    #     path: ./lotto
+    #     key: ltest
+    - name: Restore cached Primes
+      uses: actions/cache/restore@v3
       with:
         path: ./lotto
-        key: ltest
-
-    - name: Delete cache
-      run: |
-        echo "Removing cache..."
-        echo "::cache::"
-        echo "::set-output name=cache::null"
+        key: ltest  
         
     - name: run lotto.py
       run: |
@@ -58,8 +57,14 @@ jobs:
         ls -al ./lotto/
         cat ./lotto/count.log
         
-    - name: Restore cache (if available)
-      uses: actions/cache@v2
+    # - name: Restore cache (if available)
+    #   uses: actions/cache@v2
+    #   with:
+    #     path: ./lotto
+    #     key: ltest
+
+    - name: Save Primes
+      uses: actions/cache/save@v3
       with:
         path: ./lotto
         key: ltest

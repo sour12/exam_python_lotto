@@ -84,7 +84,7 @@ def save_lotto_count(lcnt):
         file.write(str(lcnt) + "\n")
         file.write(cstr + "\n")
         file.write(bstr + "\n")
-    with open("lotto.log", "r") as file:
+    with open(FILE_PATH, "r") as file:
         print("[SAVE] ", file.read())
 
 

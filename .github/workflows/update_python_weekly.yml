@@ -61,7 +61,6 @@ jobs:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Save Cache
-      id: cache-primes-save
       uses: actions/cache/save@v3
       with:
         path: ./lotto

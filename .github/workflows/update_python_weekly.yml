@@ -36,18 +36,18 @@ jobs:
 
     - run: mkdir -p ./lotto
     
-    - name: Cache the result
-      uses: actions/cache@v3
-      with:
-        path: ./lotto
-        key: ltest
-
-
-    # - name: Save Primes
-    #   uses: actions/cache/save@v3
+    # - name: Cache the result
+    #   uses: actions/cache@v3
     #   with:
     #     path: ./lotto
     #     key: ltest
+
+
+    - name: Save Primes
+      uses: actions/cache/save@v3
+      with:
+        path: ./lotto
+        key: ltest
         
     - name: run lotto.py
       run: |

@@ -88,6 +88,6 @@ def save_lotto_count(lcnt):
         print("[SAVE] ", file.read())
 
 
-ocnt = load_lotto_count()
-ncnt = prediction_lotto(1080)
-save_lotto_count(ncnt)
+# ocnt = load_lotto_count()
+ncnt = prediction_lotto(0)  # 0회차부터 검색
+# save_lotto_count(ncnt)

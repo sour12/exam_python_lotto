@@ -20,8 +20,7 @@ def prediction_lotto(ocnt):
         num+=1
     
     print("로또 번호 크롤링 ...", ocnt, num)
-    # for i in tqdm(range(ocnt+1, num+1)):
-    for i in tqdm(range(1080, num+1)):    
+    for i in tqdm(range(ocnt+1, num+1)):    
         url="https://www.dhlottery.co.kr/common.do?method=getLottoNumber&drwNo="+str(i)
         req=requests.get(url)
         result=req.json()
@@ -90,5 +89,5 @@ def save_lotto_count(lcnt):
 
 
 ocnt = load_lotto_count()
-ncnt = prediction_lotto(ocnt)
+ncnt = prediction_lotto(1080)
 save_lotto_count(ncnt)

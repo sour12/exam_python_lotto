@@ -53,4 +53,4 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: lotto_temp
-        path: ./lotto_count.log
+        path: lotto_count.log

@@ -38,7 +38,7 @@ jobs:
       uses: actions/download-artifact@v2
       with:
         name: lotto_tmp  # 다운로드할 아티팩트의 이름
-        path: ./downloaded_artifact
+        path: ./
       # continue-on-error: true
     
     - name: run lotto.py

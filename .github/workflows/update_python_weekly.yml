@@ -36,9 +36,9 @@ jobs:
     
     - name: Download Lotto Artifact
       uses: actions/download-artifact@v3
-      # with:
-      #   name: lotto_tmp
-      #   path: ./  
+      with:
+        name: lotto_tmp
+        path: ./  
       # continue-on-error: true
     
     - name: run lotto.py

@@ -48,6 +48,7 @@ jobs:
         
     - name: run lotto.py
       run: |
+        date
         python ./lotto.py
         
     - name: Delete Previous Cache

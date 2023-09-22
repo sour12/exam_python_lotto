@@ -9,7 +9,7 @@ on:
   pull_request:
     branches: [ "main" ]
   schedule:
-    - cron: "0 1 * * 1"   # UTC 1:00(월) > KST 10:00(월)  
+    - cron: "0 3 * * 5"   # UTC 3:00(금) > KST 12:00(금)  
 
 permissions:
   actions: write # require to delete cache
@@ -49,7 +49,6 @@ jobs:
     - name: run lotto.py
       run: |
         python ./lotto.py
-        # cat ./lotto/count.log
         
     - name: Delete Previous Cache
       if: ${{ steps.cache-restore.outputs.cache-hit }}

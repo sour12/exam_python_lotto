@@ -5,7 +5,6 @@ FILE_PATH="./lotto/count.log"
 
 count_num = {key: 0 for key in range(1, 46)}
 count_bonus = {key: 0 for key in range(1, 46)}
-combined_count = {key: 0 for key in range(1, 46)}
     
 def prediction_lotto(ocnt):
     print("로또 현재 회차 찾기 ...")

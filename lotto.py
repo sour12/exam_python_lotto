@@ -88,5 +88,5 @@ def save_lotto_count(lcnt):
 
 
 ocnt = load_lotto_count()
-ncnt = prediction_lotto(ocnt)  # 0회차부터 검색
+ncnt = prediction_lotto(ocnt)
 save_lotto_count(ncnt)

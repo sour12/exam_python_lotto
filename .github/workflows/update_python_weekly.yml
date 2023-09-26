@@ -4,12 +4,12 @@
 name: Python package
 
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+  # push:
+  #   branches: [ "main" ]
+  # pull_request:
+  #   branches: [ "main" ]
   schedule:
-    - cron: "0 3 * * 5"   # UTC 3:00(금) > KST 12:00(금)  
+    - cron: "0 3 * * 4"   # UTC 3:00(목) > KST 12:00(목)  
 
 permissions:
   actions: write # require to delete cache

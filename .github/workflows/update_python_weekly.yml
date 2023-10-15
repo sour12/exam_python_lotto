@@ -4,12 +4,12 @@
 name: Weekly Lotto Update
 
 on:
-  # push:
-  #   branches: [ "main" ]
+  push:
+    branches: [ "main" ]
   # pull_request:
   #   branches: [ "main" ]
-  schedule:
-    - cron: "0 3 * * 4"   # UTC 3:00(목) > KST 12:00(목)  
+  # schedule:
+  #  - cron: "0 3 * * 4"   # UTC 3:00(목) > KST 12:00(목)  
 
 permissions:
   actions: write # require to delete cache
